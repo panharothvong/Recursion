@@ -1,5 +1,6 @@
 public class IterativeSolution {
     // tri(int n)
+    // O(n)
     public int tri(int n){
         if (n < 0) {
             throw new IllegalArgumentException("Negative numbers are not allowed");
@@ -16,6 +17,7 @@ public class IterativeSolution {
     }
 
     // fact(int n)
+    // O(n)
      public int fact (int n){
         if (n < 0) {
             throw new IllegalArgumentException("Negative numbers are not allowed");

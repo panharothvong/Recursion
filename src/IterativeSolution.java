@@ -1,6 +1,36 @@
 public class IterativeSolution {
     // tri(int n)
+    public int tri(int n){
+        if (n < 0) {
+            throw new IllegalArgumentException("Negative numbers are not allowed");
+        }
+
+        int result = 0;
+        for (int i = n; i > 0; i--){
+            if(result > Integer.MAX_VALUE - i){
+                throw new ArithmeticException("Number is too large");
+            }
+            result = result + i;
+        }
+        return result;
+    }
+
     // fact(int n)
+     public int fact (int n){
+        if (n < 0) {
+            throw new IllegalArgumentException("Negative numbers are not allowed");
+        }
+
+        int result = 1;
+        for (int i = n; i > 0; i--){
+            if(result > Integer.MAX_VALUE / i){
+                throw new ArithmeticException("Number is too large");
+            }
+            result = result * i;
+        }
+        return result;
+    }
+    
     // fib(int n)
     // reverseStr(String str)
     public static String reverseString(String str) {

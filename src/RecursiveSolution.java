@@ -42,18 +42,16 @@ public class RecursiveSolution {
         return hasCharHelper(str, c, index + 1);
     }
     // gcd(int x1, int x2)
+
     // countUniquePaths(int n, int m)
-    // hasChar(String str, char c)
-    // gcd(int x1, int x2)
-    // countUniquePaths(int n, int m)
-    public static int countUniquePaths(int m, int n ){
-        return paths (0,0, m,n);
+    public static int countUniquePaths(int n, int m ){
+        return paths (0,0, n,m);
     }
 
 
-    private static int paths (int i, int j, int m, int n){
-        if (i == m-1 && j == n-1) return 1;
-        if (i >= m || j>=n) return 0;
-        return paths(i+1, j, m, n) + paths(i, j+1, m, n);
+    private static int paths (int i, int j, int n, int m){
+        if (i == n-1 && j == m-1) return 1;
+        if (i >= n || j>=m) return 0;
+        return paths(i+1, j, n, m) + paths(i, j+1, n, m);
     }
 }

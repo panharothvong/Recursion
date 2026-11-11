@@ -26,10 +26,10 @@ public class IterativeSolution {
     // gcd(int x1, int x2)
     // countUniquePaths(int n, int m)
 
-        public static int countUniquePaths(int m, int n){
-        long [][] grid = new long[m][n];
-        for (int i = 0; i < m; i++){
-            for(int j=0; j < n; j++){
+        public static int countUniquePaths(int n, int m){
+        long [][] grid = new long[n][m];
+        for (int i = 0; i < n; i++){
+            for(int j=0; j < m; j++){
                 if(i==0 || j==0){
                     grid[i][j] = 1;
                 }
@@ -38,7 +38,7 @@ public class IterativeSolution {
                 }
             }
         }
-        return Math.toIntExact(grid[m - 1][n - 1]);
+        return Math.toIntExact(grid[n - 1][m - 1]);
     }
 }
 

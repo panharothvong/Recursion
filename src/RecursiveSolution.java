@@ -38,6 +38,29 @@ public class RecursiveSolution {
     }
     
     // fib(int n)
+    // O(n) time
+    public static int fib(int n) {
+        if (n < 0) {
+            throw new IllegalArgumentException("Negative numbers are not allowed");
+        }
+        long[] memo = new long[n + 1];
+        return (int) fibMemo(n, memo);
+    }
+
+    private static long fibMemo(int n, long[] memo) {
+        if (n <= 1) {
+            return n; 
+        }
+        if (memo[n] != 0) {
+            return memo[n];
+        }
+        memo[n] = fibMemo(n - 1, memo) + fibMemo(n - 2, memo);
+        if (memo[n] > Integer.MAX_VALUE) {
+            throw new ArithmeticException("Number is too large");
+        }
+        return memo[n];
+    }
+
     // reverseStr(String str)
     public static String reverseString(String str) {
         if (str == null) {

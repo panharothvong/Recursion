@@ -45,13 +45,27 @@ public class RecursiveSolution {
 
     // countUniquePaths(int n, int m)
     public static int countUniquePaths(int n, int m ){
+        if (n <= 0 || m <= 0) {
+            return 0;
+        }
+        if (n == 1 && m == 1) {
+            return 1;
+        }
+        if (n > 17 || m > 17){
+            throw new IllegalArgumentException("Dimensiomns are too large");
+        }
         return paths (0,0, n,m);
+
     }
 
 
     private static int paths (int i, int j, int n, int m){
-        if (i == n-1 && j == m-1) return 1;
-        if (i >= n || j>=m) return 0;
+        if (i == n-1 && j == m-1) {
+            return 1;
+        }
+        if (i >= n || j>=m){
+            return 0;
+        }
         return paths(i+1, j, n, m) + paths(i, j+1, n, m);
     }
 }

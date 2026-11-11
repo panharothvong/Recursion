@@ -27,6 +27,15 @@ public class IterativeSolution {
     // countUniquePaths(int n, int m)
 
         public static int countUniquePaths(int n, int m){
+        if (n <= 0 || m <= 0) {
+            return 0;
+        }
+        if (n == 1 && m == 1) {
+            return 1;
+        }
+        if (n> 17 || m> 17){
+            throw new IllegalArgumentException("Dimensiomns are too large");
+        }
         long [][] grid = new long[n][m];
         for (int i = 0; i < n; i++){
             for(int j=0; j < m; j++){

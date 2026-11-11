@@ -54,6 +54,17 @@ public class IterativeSolution {
     }
     // hasChar(String str, char c)
 
+    public static boolean hasChar(String str, char c) {
+        if (str == null) {
+            throw new IllegalArgumentException("String cannot be null");
+        }
+        for (int i = 0; i < str.length(); i++) {
+            if (str.charAt(i) == c) {
+                return true;
+            }
+        }
+        return false;
+    }
 
     // gcd(int x1, int x2)
     // countUniquePaths(int n, int m)

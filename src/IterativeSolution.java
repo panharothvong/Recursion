@@ -112,5 +112,18 @@ public class IterativeSolution {
         }
         return Math.toIntExact(grid[n - 1][m - 1]);
     }
-}
+    // gcd(int x1, int x2)
+    // O(log(min(x1, x2)))
+    public static int gcd(int x1, int x2) {
+        if (x1 < 0 || x2 < 0) {
+            throw new IllegalArgumentException("Negative numbers are not allowed");
+        }
 
+        while (x2 != 0) {
+            int temp = x2;
+            x2 = x1 % x2;
+            x1 = temp;
+        }
+        return x1;
+    }
+}

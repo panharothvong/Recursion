@@ -1,5 +1,6 @@
 public class RecursiveSolution {
     // tri(int n)
+    // O(n)
     public int tri(int n){
         if (n < 0) {
             throw new IllegalArgumentException("Negative numbers are not allowed");
@@ -18,6 +19,7 @@ public class RecursiveSolution {
     }
     
     // fact(int n)
+    // O(n)
     public int fact(int n){
         if (n < 0) {
             throw new IllegalArgumentException("Negative numbers are not allowed");

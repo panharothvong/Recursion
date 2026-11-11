@@ -104,4 +104,17 @@ public class RecursiveSolution {
         }
         return paths(i+1, j, n, m) + paths(i, j+1, n, m);
     }
+    // gcd(int x1, int x2)
+    // O(log(min(x1, x2)))
+    public static int gcd(int x1, int x2) {
+        if (x1 < 0 || x2 < 0) {
+            throw new IllegalArgumentException("Negative numbers are not allowed");
+        }
+
+        if (x2 == 0) {
+            return x1;
+        }
+
+        return gcd(x2, x1 % x2);
+    }
 }

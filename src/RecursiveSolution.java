@@ -1,6 +1,40 @@
 public class RecursiveSolution {
     // tri(int n)
+    public int tri(int n){
+        if (n < 0) {
+            throw new IllegalArgumentException("Negative numbers are not allowed");
+        }
+
+        if(n == 0){
+            return 0;
+        }
+
+        int result = tri(n - 1);
+        if(result > Integer.MAX_VALUE - n){
+            throw new ArithmeticException("Number is too large");
+        }
+
+        return n + result;
+    }
+    
     // fact(int n)
+    public int fact(int n){
+        if (n < 0) {
+            throw new IllegalArgumentException("Negative numbers are not allowed");
+        }
+
+        if(n <= 1){
+            return 1;
+        }
+
+        int result = fact(n - 1);
+        if(result > Integer.MAX_VALUE / n){
+            throw new ArithmeticException("Number is too large");
+        }
+
+        return n * result;
+    }
+    
     // fib(int n)
     // reverseStr(String str)
     public static String reverseString(String str) {

@@ -43,4 +43,17 @@ public class RecursiveSolution {
     }
     // gcd(int x1, int x2)
     // countUniquePaths(int n, int m)
+    // hasChar(String str, char c)
+    // gcd(int x1, int x2)
+    // countUniquePaths(int n, int m)
+    public static int countUniquePaths(int m, int n ){
+        return paths (0,0, m,n);
+    }
+
+
+    private static int paths (int i, int j, int m, int n){
+        if (i == m-1 && j == n-1) return 1;
+        if (i >= m || j>=n) return 0;
+        return paths(i+1, j, m, n) + paths(i, j+1, m, n);
+    }
 }
